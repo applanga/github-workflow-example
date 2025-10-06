@@ -4,7 +4,7 @@ The example [repository](https://github.com/applanga/github-workflow-example) sh
 
 The benefit of using github workflows is that you can automate your localization process without the need to share any repository credentials with your localization provider.
 
-To use github workflows on your repository you need to create a folder call .github/workflows/ and place the workflow configuration .yml files in there. 
+To use github workflows on your repository you need to create a folder called .github/workflows/ and place the workflow configuration .yml files in there. 
 
 For a more detailed introduction to github workflows please see the [Github Documentation](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow)
 
@@ -22,11 +22,11 @@ Note that for the above workflow file the `Applanga Push Action` will only get t
 2. A **Webhook Endpoint** has to be configured for the project on Applanga dashboard to trigger the workflow. See [Configure Webhook Endpoint](#configure-webhook-endpoint) below for how to configure 
 a webhook endpoint.
 
-Note that if you are already having a project setup on Applanga and you want to test the pull command, all key's that you want to pull should be tagged with `app:translations.json`, because of the current Cli configuration example. For more info see the [Applanga Cli documentation](https://www.applanga.com/docs/integration-documentation/cli).
+Note that if you are already having a project setup on Applanga and you want to test the pull command, all keys that you want to pull should be tagged with `app:translations.json`, because of the current Cli configuration example. For more info see the [Applanga Cli documentation](https://www.applanga.com/docs/integration-documentation/cli).
 
 ---
 ## Configure Webhook Endpoint
-To the trigger the `applanga-pull` workflow a webhook endpoint has to be configured in the projects settings page on applanga. 
+To trigger the `applanga-pull` workflow a webhook endpoint has to be configured in the projects settings page on applanga. 
 
 The webhook is triggered at least 15 minutes from when there is no translation change. This means whenever translation is added or edited a webhook request is scheduled to be sent to all configured endpoints for the project 15 minutes later. The scheduled request will be sent as planned unless there is a new change to translation before the scheduled time, in which case it is rescheduled to be sent 15 minutes later.
 
@@ -68,7 +68,7 @@ For more information about triggering a workflow dispatch event via REST Api che
 
 Because the workflows make use of the [Applanga Command Interface](https://github.com/applanga/applanga-cli) you also need to add a [.applanga.json](https://github.com/applanga/github-workflow-example/blob/master/.applanga.json) configuration file to your repository. 
 
-To uniqly identify your project you need to provide your ***API Access Token*** which can be found on the **API** section in the Applanga Project Settings in the [Applanga Dashboard](https://dashboard.applanga.com). Select your project, click ***Project Settings***, click on **“Show API Token”** and copy the Token. The token can be stored as a [Encrypted Repository Secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository) labeled **APPLANGA\_ACCESS\_TOKEN** or as plain text directly in the config e.g.: `"app": { "access_token": "<APPLANGA_API_TOKEN>", ... }`.
+To uniquely identify your project you need to provide your ***API Access Token*** which can be found on the **API** section in the Applanga Project Settings in the [Applanga Dashboard](https://dashboard.applanga.com). Select your project, click ***Project Settings***, click on **“Show API Token”** and copy the Token. The token can be stored as a [Encrypted Repository Secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository) labeled **APPLANGA\_ACCESS\_TOKEN** or as plain text directly in the config e.g.: `"app": { "access_token": "<APPLANGA_API_TOKEN>", ... }`.
 
 The included config is set-up to push all changes to `translations.json` file under the directory `react_json_sample/en/` to Applanga and pull all other languages from Applanga as well as create the needed directories on the daily schedule or via the commandline request as described above.
 
