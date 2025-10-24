@@ -1,4 +1,4 @@
-# Applanga Github Workflow Integration Example
+## Applanga Github Workflow Integration Example
  
 The example [repository](https://github.com/applanga/github-workflow-example) showcases a full cycle [github workflow setup](https://github.com/applanga/setup-applanga-cli) integration with the [Applanga Localization Platform](https://www.applanga.com).
 
@@ -9,7 +9,7 @@ To use github workflows on your repository you need to create a folder called .g
 For a more detailed introduction to github workflows please see the [Github Documentation](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow)
 
 ---
-# Workflow Configurations
+### Workflow Configurations
 
 The [repository](https://github.com/applanga/github-workflow-example) contains 2 workflows. Running and past workflow actions can be tracked under the [**Actions** Tab](https://github.com/applanga/github-workflow-example/actions).
 
@@ -25,7 +25,7 @@ a webhook endpoint.
 Note that if you are already having a project setup on Applanga and you want to test the pull command, all keys that you want to pull should be tagged with `app:translations.json`, because of the current Cli configuration example. For more info see the [Applanga Cli documentation](https://www.applanga.com/docs/integration-documentation/cli).
 
 ---
-## Configure Webhook Endpoint
+### Configure Webhook Endpoint
 To trigger the `applanga-pull` workflow a webhook endpoint has to be configured in the projects settings page on applanga. 
 
 The webhook is triggered at least 15 minutes from when there is no translation change. This means whenever translation is added or edited a webhook request is scheduled to be sent to all configured endpoints for the project 15 minutes later. The scheduled request will be sent as planned unless there is a new change to translation before the scheduled time, in which case it is rescheduled to be sent 15 minutes later.
@@ -64,7 +64,7 @@ Next click **Save endpoint**.
 For more information about triggering a workflow dispatch event via REST Api check [here](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event).
 
 ---
-# Applanga Configuration
+### Applanga Configuration
 
 Because the workflows make use of the [Applanga Command Interface](https://github.com/applanga/applanga-cli) you also need to add a [.applanga.json](https://github.com/applanga/github-workflow-example/blob/master/.applanga.json) configuration file to your repository. 
 
