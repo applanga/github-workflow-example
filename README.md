@@ -1,12 +1,12 @@
-## Applanga Github Workflow Integration Example
+## Applanga GitHub Workflow Integration Example
  
-The example [repository](https://github.com/applanga/github-workflow-example) showcases a full cycle [github workflow setup](https://github.com/applanga/setup-applanga-cli) integration with the [Applanga Localization Platform](https://www.applanga.com).
+The example [repository](https://github.com/applanga/github-workflow-example) showcases a full cycle [GitHub workflow setup](https://github.com/applanga/setup-applanga-cli) integration with the [Applanga Localization Platform](https://www.applanga.com).
 
-The benefit of using github workflows is that you can automate your localization process without the need to share any repository credentials with your localization provider.
+The benefit of using GitHub workflows is that you can automate your localization process without the need to share any repository credentials with your localization provider.
 
-To use github workflows on your repository you need to create a folder called .github/workflows/ and place the workflow configuration .yml files in there. 
+To use GitHub workflows on your repository you need to create a folder called .github/workflows/ and place the workflow configuration .yml files in there. 
 
-For a more detailed introduction to github workflows please see the [Github Documentation](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow)
+For a more detailed introduction to GitHub workflows please see the [GitHub Documentation](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow)
 
 ---
 ### Workflow Configurations
@@ -18,7 +18,7 @@ The [repository](https://github.com/applanga/github-workflow-example) contains 2
 Note that for the above workflow file the `Applanga Push Action` will only get triggered when there is a push to the `main` branch as specified in the config. It is also possible to specify a different branch or add more branches as needed.
 
 [.github/workflows/applanga-pull.yml](https://github.com/applanga/github-workflow-example/blob/master/.github/workflows/applanga-pull.yml) pulls new translations available from Applanga and then creates a pull request in the repo with the newly added languages or updated translation files. The workflow configuration is configured to run on any given branch. To set this up successfully there are 2 important requirements
-1. The workflow file must first be created from the default branch. In other words start first by adding the workflow file to the `master` or `main` branch(whichever is the default) of the repository, which allows github to pick up the workflow. This is a github limitation, and more info can be found on the following github [issue](https://github.community/t/workflow-dispatch-event-not-working/128856/2)
+1. The workflow file must first be created from the default branch. In other words start first by adding the workflow file to the `master` or `main` branch(whichever is the default) of the repository, which allows GitHub to pick up the workflow. This is a GitHub limitation, and more info can be found on the following GitHub [issue](https://github.community/t/workflow-dispatch-event-not-working/128856/2)
 2. A **Webhook Endpoint** has to be configured for the project on Applanga dashboard to trigger the workflow. See [Configure Webhook Endpoint](#configure-webhook-endpoint) below for how to configure 
 a webhook endpoint.
 
@@ -45,7 +45,7 @@ Please refer to the following screenshot
 
 ![](https://www.applanga.com/assets/images/docu/webhook_branch_trigger_endpoint_url.png)
 
-* **Headers** You need to set an `Authorization` header. The `Authorization` header value is a valid github personal access token with repository permissions combined like so `token <GH_PERSONAL_ACCESS_TOKEN>` where `<GH_PERSONAL_ACCESS_TOKEN>` is the personal access token generated on github. For example if you had an access token `ghp_zWAdtUqmtFTY7qkqJS1wmuEx8ytX0SpIPv` then the Authorization header would be set like so `token ghp_zWAdtUqmtFTY7qkqJS1wmuEx8ytX0SpIPv`. Please refer to the following github [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) on how to generate an access token.
+* **Headers** You need to set an `Authorization` header. The `Authorization` header value is a valid GitHub personal access token with repository permissions combined like so `token <GH_PERSONAL_ACCESS_TOKEN>` where `<GH_PERSONAL_ACCESS_TOKEN>` is the personal access token generated on GitHub. For example if you had an access token `ghp_zWAdtUqmtFTY7qkqJS1wmuEx8ytX0SpIPv` then the Authorization header would be set like so `token ghp_zWAdtUqmtFTY7qkqJS1wmuEx8ytX0SpIPv`. Please refer to the following GitHub [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) on how to generate an access token.
 
 ![](https://www.applanga.com/assets/images/docu/webhook_branch_trigger_headers.png)
 
