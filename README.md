@@ -6,7 +6,7 @@ The benefit of using GitHub workflows is that you can automate your localization
 
 To use GitHub workflows on your repository you need to create a folder called .github/workflows/ and place the workflow configuration .yml files in there. 
 
-For a more detailed introduction to GitHub workflows please see the [GitHub Documentation](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow)
+For a more detailed introduction to GitHub workflows please see the [GitHub Documentation](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows)
 
 ---
 ### Workflow Configurations
@@ -61,7 +61,7 @@ Next click **Save endpoint**.
 
 ![](https://www.applanga.com/assets/images/docu/webhook_branch_trigger_body.png)
 
-For more information about triggering a workflow dispatch event via REST Api check [here](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event).
+For more information about triggering a workflow dispatch event via REST API check [here](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event).
 
 ---
 ### Applanga Configuration
